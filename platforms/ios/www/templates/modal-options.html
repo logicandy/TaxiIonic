@@ -1,0 +1,52 @@
+<ion-modal-view class="">
+    <ion-header-bar class="no-bg b-none bar-no-border">
+        <h1 class="title">Opcionais</h1>
+        <button class="button button-icon button-clear button-light ion-android-close" ng-click="closeTermo()"></button>
+    </ion-header-bar>
+    <ion-content class="" style="margin-bottom: 45px;">
+        <div class="list">
+            <div class="item item-divider">Promo</div>
+
+            <ion-radio ng-model="choiceCupom" ng-value="'A'" name="cupom">
+                Inserir Cupom de Desconto
+                <p class="">clique para adicionar o cupom</p>
+            </ion-radio>
+
+            <div class="item item-divider">Pagar no App</div>
+
+            <ion-radio ng-model="payment" ng-value="'A'" name="payment">
+                Cartão de Crédito no App
+                <p class="">Visa/Mastercard</p>
+            </ion-radio>
+            <ion-radio ng-model="payment" ng-value="'A'" name="payment">
+                Conta PayPal
+                <p class="">Visa/Mastercard/Amex/Hipercard/Elo/Hiper</p>
+            </ion-radio>
+
+            <div class="item item-divider">Pagar no Carro</div>
+            <ion-radio ng-model="payment" ng-value="'A'" name="payment">
+                Dinheiro
+            </ion-radio>
+            <ion-radio ng-model="payment" ng-value="'A'" name="payment">
+                Débito
+                <p class="">Não aceita Elo</p>
+            </ion-radio>
+            <ion-radio ng-model="payment" ng-value="'A'" name="payment">
+                Débito
+                <p class="">Visa/MasterCard - Não é válido para promoções</p>
+            </ion-radio>
+
+            <div class="item item-divider">Opcionais</div>
+
+            <ion-checkbox class="black-label item-checkbox-right" checked="true">Veículo adaptado para cadeirante</ion-checkbox>
+            <ion-checkbox class="black-label item-checkbox-right" checked="true">Porta Malas Grande</ion-checkbox>
+            <ion-checkbox class="black-label item-checkbox-right" checked="true">Permite animais</ion-checkbox>
+            <ion-checkbox class="black-label item-checkbox-right" checked="true">Ar-condicionado</ion-checkbox>
+        </div>
+
+
+
+    </ion-content>
+    <div class="button button-balanced button-block margin-0 border-radius-0 yellow-button " style="position:fixed; bottom:0; width:100%;" ng-click="book();closeTermo();">MEU TÁXI</div>
+
+</ion-modal-view>

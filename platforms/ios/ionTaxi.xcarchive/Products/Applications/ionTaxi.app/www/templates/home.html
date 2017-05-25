@@ -1,0 +1,208 @@
+<!--
+  This template loads for the 'home' state (app.js)
+  Show list of shortcuts to other screens
+-->
+<ion-view view-title="Capital Táxi" ng-init="init()" hide-nav-bar="true">
+    <ion-content scroll="false">
+        <!-- Show map here -->
+        <div id="map" ng-style="{height: mapHeight + 'px'}"></div>
+
+        <div class="modal-bg black-transparent" ng-show="showModalBg"></div>
+
+        <div class="map-overlay list">
+            <button class="button button-icon button-clear ion-navicon menu-icon" ng-show="true" menu-toggle="left">
+            </button>
+
+            <div class="adress-border" ng-hide="showForm">
+
+                <img src="img/componente_enderecos.png" alt="" class="img-adress">
+
+                <div style="width: 96%;margin-left: 3%;">
+                    <div class="item item1 padding-10 gray" ui-sref="places({type: 1})">
+                        <div class="">{{originAdress.formatted_address}}</div>
+                    </div>
+                    <div class="item item2 padding-10 gray" ui-sref="places">
+                        <div class="blue">{{destinyAdress.formatted_address}}</div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Booking information -->
+        <div class="booking-info">
+            <div class="col col-100"><button class="button button-icon" ng-show="hc.corridaAtiva" ng-click="hc.reset()"><img src="img/icon-cancel.png" width="25%;" alt=""> <p class="" style="margin-top: -10%;margin-bottom: 0;">Cancelar</p></button></div>
+            <div class="row">
+                <div class="col col-50"><button class="button button-icon" ng-click="teste2()" ng-show="destinyAdress.formatted_address == 'Escolha seu destino...'"><img src="img/icon-house.png" width="50%;" alt=""> <p class="legend-adress">Casa</p></button></div>
+                <div class="col col-50"><button class="button button-icon" ng-click="testeCallback()" ng-show="destinyAdress.formatted_address == 'Escolha seu destino...'"><img src="img/icon-work.png" width="50%;" alt=""> <p class="legend-adress">Trabalho</p></button></div>
+            </div>
+
+
+            <!--<button class="button button-icon" ng-show="destinyAdress.formatted_address == 'Escolha seu destino...'">Trabalho</button>
+            <button class="button button-icon" ng-show="destinyAdress.formatted_address == 'Escolha seu destino...'">Recente</button>-->
+
+            <!--<div class="button-circle button-next balanced-bg light" ng-hide="showForm" ng-click="toggleForm()">NEXT</div>-->
+
+            <!--<div class="padding" ng-class="{'stable-bg': !showForm, 'light': showForm}">Choose your drop-off above</div>-->
+
+            <!--<div class="vehicles row text-center" ng-show="!showForm">
+
+                <div class="col item-vehicle" ng-repeat="vehicle in vehicles" ng-class="{'active': vehicle.active}" ng-click="toggleVehicle($index)">
+                    <i class="{{ vehicle.icon }}"></i>
+                    <span>{{ vehicle.name }}</span>
+                </div>
+            </div>-->
+
+            <div class="list margin-bottom-0 list-home" ng-hide="showForm || destinyAdress.formatted_address == 'Escolha seu destino...'">
+
+                <ion-radio ng-model="hc.carChoice" ng-value="'A'" ng-change="hc.changeTaxi()" name="car">
+                    <div class="row padding-0 radio-font-14">
+                        <div class="col col-20">
+                            <img src="img/off-64.png" width="100%;" alt="" class="vertical-centralize">
+                        </div>
+                        <div class="col col-40 padding-left-5" style="width:45%;">
+                            Táxi Promocional
+                            <p class="overflow-visible radio-font-10">Desconto de 20%</p>
+                        </div>
+                        <div class="col col-25 padding-left-5 " style="text-align: center; ">
+                            Tempo
+                            <p class="overflow-visible ">6 min</p>
+                        </div>
+                        <div class="col-15">
+                            <img src={{hc.img1}} alt="" width="80%;margin-left-10%;" style="margin-top: 25%;">
+                        </div>
+                    </div>
+                </ion-radio>
+
+                <ion-radio ng-model="hc.carChoice" ng-value="'B'" ng-change="hc.changeTaxi()" name="car">
+                    <div class="row padding-0 radio-font-14">
+                        <div class="col col-20">
+                            <img src="img/comum-64.png" width="100%;" alt="" class="vertical-centralize">
+                        </div>
+                        <div class="col col-40 padding-left-5" style="width:45%;">
+                            Táxi Comum
+                            <!--<p class="overflow-visible radio-font-10">Desconto de 20%</p>-->
+                        </div>
+                        <div class="col col-25 padding-left-5 " style="text-align: center; ">
+                            Tempo
+                            <p class="overflow-visible ">4 min</p>
+                        </div>
+                        <div class="col-15">
+                            <img src={{hc.img2}} alt="" width="80%;margin-left-10%;">
+                        </div>
+                    </div>
+                </ion-radio>
+                <div class="button button-balanced button-block margin-0 border-radius-0 yellow-button" ng-click="modalOptions.show() ">CONFIRMAR PEDIDO</div>
+            </div>
+
+            <div id="find" class="animate-show-hide" ng-show="finding" ng-style="">
+                <div class="loader"></div>
+                <div class="padding search" style="background-color:#fff;">
+
+                    Procurando Táxi...
+                </div>
+            </div>
+
+            <div id="driver" class="driver-info rlt text-center animate-show-hide" ng-if="foundDriver">
+
+                <div class="driver-picture padding-bottom">
+
+                    <img class="circle" src="img/thumb/adam.jpg" alt="" />
+                </div>
+
+                <div class="driver-plate row">
+
+                    <div class="col" style="text-align:left">
+                        <div class="text-hint">Plate Number</div>
+                        <strong>ABCD-1234</strong>
+                    </div>
+
+                    <div class="col" style="text-align:right">
+                        <div class="text-hint">Please pay by</div>
+                        <strong>Cash</strong>
+                    </div>
+                </div>
+
+                <h3 class="no-margin balanced">Márcio de Paula Monte</h3>
+                <h5 class="no-margin">and I am 14KM away</h5>
+
+
+
+                <!--<div class="button button-balanced button-block" ng-click="track()">Next</div>-->
+            </div>
+
+            <!--<div class="booking-form list padding-left padding-right stable-bg " ng-show="showForm ">
+                <ion-scroll direction="y" class="theroot">
+                    <div class="item item-divider">Promo</div>
+
+                    <ion-radio ng-model="choice" ng-value="'A'">
+                        Inserir Cupom de Desconto
+                        <p class="text-hint">clique para adicionar o cupom</p>
+                    </ion-radio>
+
+                    <div class="item item-divider">Pagar no App</div>
+
+                    <ion-radio ng-model="choice" ng-value="'A'" ng-change="changeMethod('cash')">
+                        Cartão de Crédito no App
+                        <p class="text-hint">Visa/Mastercard</p>
+                    </ion-radio>
+                    <ion-radio ng-model="choice" ng-value="'A'" ng-change="changeMethod('cash')">
+                        Conta PayPal
+                        <p class="text-hint">Visa/Mastercard/Amex/Hipercard/Elo/Hiper</p>
+                    </ion-radio>
+
+                    <div class="item item-divider">Pagar no Carro</div>
+                    <ion-radio ng-model="choice" ng-value="'A'" ng-change="changeMethod('cash')">
+                        Dinheiro
+                    </ion-radio>
+                    <ion-radio ng-model="choice" ng-value="'A'" ng-change="changeMethod('cash')">
+                        Débito
+                        <p class="text-hint">Não aceita Elo</p>
+                    </ion-radio>
+                    <ion-radio ng-model="choice" ng-value="'A'" ng-change="changeMethod('cash')">
+                        Débito
+                        <p class="text-hint">Visa/MasterCard - Não é válido para promoções</p>
+                    </ion-radio>
+                </ion-scroll>-->
+
+
+
+
+            <!--<div class="item item-icon-left item-icon-right ">
+                    <i class="icon ion-cash "></i>
+                    <div ui-sref="payment_method ">
+                        <div>Payment</div>
+                        <span class="bold ">Cash</span>
+                    </div>
+                    <i class="icon ion-arrow-right-b gray "></i>
+                </div>
+
+                <div class="item row ">
+                    <div class="col button button-light ">
+                        Pick-up Now
+                    </div>
+                    <div class="col button ">
+                        Pick-up Later
+                    </div>
+                </div>
+
+                <div class="item item-icon-left " ng-click="showNotePopup() ">
+                    <i class="icon ion-ios-compose-outline "></i>
+                    <span class="italic dark " ng-hide="note ">Notes to driver</span>
+                    <span class="dark " ng-show="note ">{{ note }}</span>
+                </div>
+
+                <div class="item item-icon-left " ng-click="showPromoPopup() ">
+                    <i class="icon ion-pricetag "></i>
+                    <span class="italic dark " ng-hide="promo ">Promo Code</span>
+                    <span class="dark " ng-show="promo ">{{ promo }}</span>
+                </div>-->
+            <!--
+                <div class="button button-balanced button-block " ng-click="book() ">Chamar</div>
+                <div class="button button-balanced button-block " ng-click="toggleForm() ">Cancelar</div>
+
+        </div>-->
+        </div>
+    </ion-content>
+</ion-view>

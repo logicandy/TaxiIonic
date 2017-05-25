@@ -1,0 +1,62 @@
+<!--
+  This template loads for the 'profile' state (app.js)
+  Show user profile
+  user is a $scope variable in ProfileCtrl (controllers.js)
+-->
+<ion-view view-title="Editar Perfil">
+    <ion-content>
+        <!--Profile picture-->
+        <div class="text-center user-profile">
+
+            <img class="profile-picture circle" menu-close="" src="img/default-user.png">
+        </div>
+
+        <!--Edit profile setting-->
+        <div class="list profile">
+            <label class="item item-input item-floating-label label-app-no-border">
+              <span class="input-label label-app">Nome</span>
+              <input type="text" ng-model="usuario.nome" placeholder="Nome">
+            </label>
+            <label class="item item-input item-floating-label label-app-no-border">
+              <span class="input-label label-app">Email</span>
+              <input type="email" ng-model="usuario.email" placeholder="Email">
+            </label>
+            <label class="item item-input item-floating-label label-app-no-border">
+              <span class="input-label label-app">Telefone Cadastrado</span>
+              <input type="tel" ng-model="usuario.telefone" placeholder="Telefone">
+            </label>
+            <label class="item item-input item-floating-label label-app-no-border">
+              <span class="input-label label-app">Senha</span>
+              <input type="password" ng-model="usuario.senha" placeholder="Email">
+            </label>
+            <label class="item item-input item-floating-label label-app-no-border">
+              <span class="input-label label-app">Confirmação de Senha</span>
+              <input type="password" ng-model="usuario.confirmacaoSenha" placeholder="Email">
+            </label>
+        </div>
+
+        <hr class="hr1">
+        <div>
+            <label class="item no-border" style="padding: 0;padding-left: 16px;color:black;">FAVORITOS</label>
+            <div class="list adress">
+                <label for="" class="item house" ui-sref="places({type: 2})">
+                  <p>Casa</p>
+              <i class="ion-home  icon-label"></i>
+              <span>{{homeAress.formatted_address}}</span>
+            </label>
+                <label for="" class="item work" ui-sref="places({type: 3})">
+                  <p>Trabalho</p>
+              <i class="ion-briefcase  icon-label"></i>
+              <span>{{workAress.formatted_address}}</span>
+            </label>
+            </div>
+        </div>
+        <div class="button button-balanced button-block margin-0 border-radius-0 yellow-button" ng-click="pc.update() ">ATUALIZAR</div>
+
+        <!--Action buttons-->
+        <!--<div class="padding">
+      <button class="button button-block facebook-color light">LOGIN WITH FACEBOOK</button>
+      <div class="text-center assertive">REMOVE ACCOUNT</div>
+    </div>-->
+    </ion-content>
+</ion-view>

@@ -1,0 +1,64 @@
+<ion-view view-title="Login" hide-nav-bar="true" class="login-bg">
+    <ion-content class="login-bg">
+
+        <div class="login-content">
+
+            <div class="light-bg">
+
+                <!-- Logo -->
+                <div class="padding text-center">
+                    <div class="logo balanced-bg">
+                        <i class="light icon-sedan"></i>
+                    </div>
+                    <h2 class="dark">
+                        Meu Táxi CE
+                    </h2>
+                    <!--<p class="dark">Taxi booking app for ionic</p>-->
+                </div>
+
+                <!-- Login form -->
+                <div class="list padding">
+
+
+                    <label class="item item-input">
+          <i class="ion-ios-locked-outline light icon-label"></i>
+          <input type="text"  required="true" ng-model="rc.nome" placeholder=" Nome" maxlength="50">
+        </label>
+
+                    <label class="item item-input">
+          <i class="ion-ios-locked-outline light icon-label"></i>
+          <input type="email"  required="true" ng-model="rc.email" placeholder="Email" maxlength="50">
+        </label>
+
+                    <label class="item item-input">
+          <i class="ion-ios-locked-outline light icon-label"></i>
+          <input type="tel" placeholder="Telefone" ng-model = "rc.telefoneSM" min="0" ng-change="lc.changeSenhaLogin()" ui-br-phone-number required="true" >
+          <!--<input type="number" min="0" ui-options="{clearOnBlur: false}" ui-mask={{'(99)99999-9999'}} required="true" ng-model = "rc.telefoneSM" ng-change="showNumber()">-->
+        </label>
+
+                    <label class="item item-input">
+          <i class="ion-ios-locked-outline light icon-label"></i>
+          <input type="password" required="true" ng-model = "rc.senha" placeholder="Senha" maxlength="12">
+        </label>
+
+                    <label class="item item-input">
+          <i class="ion-ios-locked-outline light icon-label"></i>
+          <input type="password" required="true" ng-model = "rc.confirmacao" placeholder="Confirmação de Senha" maxlength="12">
+        </label>
+                </div>
+                <div class="padding">
+                    <button class="button button-block button-balanced" ng-click="rc.registrarCliente()">
+            Cadastrar
+          </button>
+                </div>
+            </div>
+
+            <!-- Other links -->
+            <div class="text-center padding">
+                <a ui-sref="login" class="light">Já possui uma conta?<span class="blue">Login</span></a>
+            </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>

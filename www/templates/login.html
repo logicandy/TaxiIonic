@@ -1,0 +1,45 @@
+<ion-view view-title="Login" hide-nav-bar="true" class="login-bg">
+    <ion-content class="login-bg">
+
+        <div class="login-content">
+
+            <div class="">
+
+                <!-- Logo -->
+                <div class="padding text-center">
+                    <img src="img/logo-appTaxi.png" alt="" width="80%" style="margin-top:10%;">
+
+
+                    <!--<h2 class="dark">
+                        Meu Táxi CE
+                    </h2>-->
+                    <!--<p class="dark">Taxi booking app for ionic</p>-->
+                </div>
+
+                <!-- Login form -->
+                <div class="list padding bottom-0" style="margin-top: 25%;">
+                    <label class="item item-input form-login">
+            <input class="font-20 input-login" type="tel" placeholder="Telefone" ng-model="lc.usuario" min="0" ng-change="lc.changeSenhaLogin()" ui-br-phone-number required="true" >
+          </label>
+                    <label class="item item-input form-login" style="margin-top:2px;">
+            <input class="font-20 input-login" type="password" ng-model = "lc.senha" ng-change="lc.changeSenhaLogin()" required="true" maxlength="12" placeholder="Senha">
+          </label>
+                </div>
+                <div class=" padding margin-top-13px bottom-0" style="padding-top:0px;">
+                    <button class="button button-block button-login" ng-click="lc.loginComum()">
+            ENTRAR
+          </button>
+                </div>
+
+            </div>
+
+            <!-- Other links -->
+            <div class="row margin-top-13px align-center">
+                <button ui-sref="recover" class="light button-transparent forgot-pass">Esqueceu sua senha?</button>
+            </div>
+            <div class="row align-center" style="margin-top: 15%;">
+                <button ui-sref="register" class="light button-transparent">Cadastre-se aqui</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

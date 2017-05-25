@@ -1,0 +1,31 @@
+<!--
+  This template loads for the 'finding' state (app.js)
+  Show list of drivers with distance
+  drivers is a $cope variable in FindingCtrl (controllers.js)
+  FindingCtrl pull data from Drivers service (services.js)
+-->
+<ion-view view-title="" ng-init="fc.init()" hide-nav-bar="true">
+    <ion-content class="balanced-bg" scroll="false">
+        <div id="map2" style="height: 90%; width:100%;"></div>
+        <div class="loader"></div>
+        <div class="padding" style="height: 10%;background-color:#fff;text-align:center">
+
+            <div class="search color-gray">Procurando Táxi...</div>
+        </div>
+
+
+        <!-- Green circle with marker icon in the center -->
+        <!--<div class="padding text-center">
+            <div class="location-animation circle">
+                <i class="ion ion-location light"></i>
+            </div>
+        </div>
+
+        <div class="list list-drivers padding">
+            <div class="item" ng-repeat="driver in drivers">
+                <span>{{ driver.name }}</span>
+                <span class="pull-right">{{ driver.status }}...</span>
+            </div>
+        </div>-->
+    </ion-content>
+</ion-view>

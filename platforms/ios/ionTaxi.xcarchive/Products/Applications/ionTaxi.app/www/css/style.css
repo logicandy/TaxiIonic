@@ -1,0 +1,209 @@
+/* Empty. Add your own CSS if you like */
+
+.search {
+    /*height: 90px;
+    line-height: 90px;*/
+    text-align: center;
+    color: #898D97;
+}
+
+.animate-show-hide.ng-hide {
+    opacity: 0;
+}
+
+.animate-show-hide.ng-hide-remove {
+    transition: all linear 1.5s;
+}
+
+.black-hr {
+    border: none;
+    border-top: 5px solid #000;
+    width: 100%;
+    margin: 0;
+}
+
+.color-gray {
+    color: #898D97;
+}
+
+.loader {
+    height: 4px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #898D97;
+}
+
+.loader:before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 4px;
+    background-color: #000;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        left: -200px;
+        width: 30%;
+    }
+    50% {
+        width: 30%;
+    }
+    70% {
+        width: 70%;
+    }
+    80% {
+        left: 50%;
+    }
+    95% {
+        left: 120%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+.padding-10 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 10px !important;
+}
+
+.margin-0 {
+    margin: 0 !important;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.border-radius-0 {
+    border-radius: 0px;
+}
+
+.list-home .item-radio .item-content {
+    padding: 3px 0px 0px 3px;
+}
+
+.list-home .item-radio input:checked+.radio-content .radio-icon {
+    visibility: hidden;
+}
+
+.booking-form {
+    height: 100%;
+}
+
+.icon-radio {
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 50px;
+}
+
+.vertical-centralize {
+    margin-top: 0.5em;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.padding-left-5 {
+    padding-left: 5%;
+}
+
+.money-center {
+    text-align: center;
+    width: 15%;
+}
+
+.title {
+    text-align: center !important;
+}
+
+.menu-icon {
+    font-size: 32px;
+    color: black !important;
+}
+
+.adress-border {
+    border: 2px solid #fdca09;
+    border-radius: 3px;
+    box-shadow: 1px 1px 12px grey;
+    background-color: white;
+}
+
+.item2 {
+    border: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.item1 {
+    border: none;
+    border-bottom: solid 2px #d7d7d7;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.blue {
+    color: #0090bf !important;
+}
+
+.item-divider {
+    color: black !important;
+}
+
+.black-label {
+    color: black !important;
+}
+
+.yellow-button {
+    background-color: #ffcd0d !important;
+    color: #000 !important;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.item {
+    color: #aaaaaa;
+}
+
+.legend-adress {
+    margin-top: -25%;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.item p {
+    overflow: visible;
+}
+
+.padding-0 {
+    padding: 0px;
+}
+
+.radio-font-14 {
+    font-size: 14px;
+}
+
+.radio-font-10 {
+    font-size: 11px !important;
+}
+
+.img-adress {
+    float: left;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+#menu .item {
+    border: none;
+    font-weight: bold;
+}

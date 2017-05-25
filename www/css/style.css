@@ -1,0 +1,328 @@
+/* Empty. Add your own CSS if you like */
+
+.search {
+    /*height: 90px;
+    line-height: 90px;*/
+    text-align: center;
+    color: #898D97;
+}
+
+.animate-show-hide.ng-hide {
+    opacity: 0;
+}
+
+.animate-show-hide.ng-hide-remove {
+    transition: all linear 1.5s;
+}
+
+.black-hr {
+    border: none;
+    border-top: 5px solid #000;
+    width: 100%;
+    margin: 0;
+}
+
+.color-gray {
+    color: #898D97;
+}
+
+.loader {
+    height: 4px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #898D97;
+}
+
+.loader:before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 4px;
+    background-color: #000;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        left: -200px;
+        width: 30%;
+    }
+    50% {
+        width: 30%;
+    }
+    70% {
+        width: 70%;
+    }
+    80% {
+        left: 50%;
+    }
+    95% {
+        left: 120%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+.padding-10 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 10px !important;
+}
+
+.margin-0 {
+    margin: 0 !important;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.border-radius-0 {
+    border-radius: 0px;
+}
+
+.list-home .item-radio .item-content {
+    padding: 3px 0px 0px 3px;
+}
+
+.list-home .item-radio input:checked+.radio-content .radio-icon {
+    visibility: hidden;
+}
+
+.list-home .item-radio input:checked+.radio-content .item-content {
+    /* style the item content when its checked */
+    background: #2b7cff;
+    color: white !important;
+}
+
+.booking-form {
+    height: 100%;
+}
+
+.icon-radio {
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 50px;
+}
+
+.vertical-centralize {
+    margin-top: 0.5em;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.padding-left-4 {
+    padding-left: 4px !important;
+}
+
+.money-center {
+    text-align: center;
+    width: 15%;
+}
+
+.title {
+    text-align: center !important;
+}
+
+.menu-icon {
+    font-size: 32px;
+    color: black !important;
+}
+
+.adress-border {
+    border: 2px solid #fdca09;
+    border-radius: 3px;
+    box-shadow: 1px 1px 12px grey;
+    background-color: white;
+}
+
+.item2 {
+    border: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.item1 {
+    border: none;
+    border-bottom: solid 2px #d7d7d7;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.blue {
+    color: #0090bf !important;
+}
+
+.item-divider {
+    color: black !important;
+}
+
+.black-label {
+    color: black !important;
+}
+
+.yellow-button {
+    background-color: #ffcd0d !important;
+    color: #000 !important;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.red-button {
+    background-color: #cb463f !important;
+    color: white !important;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.item {
+    color: #aaaaaa;
+}
+
+.legend-adress {
+    margin-top: -25%;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.item p {
+    overflow: visible;
+}
+
+.padding-0 {
+    padding: 0px;
+}
+
+.radio-font-14 {
+    font-size: 14px;
+}
+
+.font-60 {
+    font-size: 60% !important;
+}
+
+.radio-font-10 {
+    font-size: 11px !important;
+}
+
+.img-adress {
+    float: left;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+#menu .item {
+    border: none;
+    font-weight: bold;
+}
+
+.img-finding {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 40%;
+}
+
+.button-transparent {
+    background: none;
+    border: none;
+}
+
+.font-20 {
+    font-size: 20px !important;
+}
+
+.login-bg .scroll .login-content {
+    height: 90%;
+}
+
+.button-login {
+    background-color: #cb463f;
+    border-radius: 5px;
+    color: white;
+    /*font-weight: bold;*/
+    font-size: 19px;
+}
+
+.form-login {
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 0px;
+}
+
+.margin-top-13px {
+    margin-top: 13px;
+}
+
+.bottom-0 {
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.align-center {
+    text-align: center;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.forgot-pass {
+    font-size: 19px;
+}
+
+.margin-top-2 {
+    margin-top: 2px;
+}
+
+.input-login {
+    color: white !important;
+}
+
+.item-floating-label input {
+    font-weight: bold;
+    padding-left: 10%;
+    color: #5a5e67;
+}
+
+.profile .item {
+    border: none !important;
+    border-bottom: 1px #5a5e67;
+    margin-top: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.adress {
+    margin-bottom: 15% !important;
+}
+
+.adress .item {
+    color: #5a5e67;
+    border: none !important;
+}
+
+.hr1 {
+    border: none;
+    border-bottom: 1px #5a5e67 solid;
+    margin-top: 2px;
+    width: 90%;
+    margin-left: 5%;
+}
